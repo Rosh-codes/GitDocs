@@ -43,4 +43,5 @@ jobs:
           npm run deploy
         env:
           DEPLOYMENT_BRANCH: gh-pages
+          GIT_USER: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
