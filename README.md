@@ -1,41 +1,50 @@
-# Website
+# Git Documentation Site
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Welcome to your **Git Documentation Site**, built with **Docusaurus**!  
+This site provides a beginner-friendly guide to Git commands, workflows, and best practices, organized step by step.
+
+---
+
+## Features
+
+- Learn Git from scratch: setup, commits, branches, and remotes
+- Clear explanation and examples
+- Summary tables for quick reference
+- Beginner-friendly 
+
+---
 
 ## Installation
 
+1. **Clone this repository**
+
 ```bash
-yarn
+git clone https://github.com/Rosh-codes/GitDocs.git
+cd git-documentation-site
 ```
-
-## Local Development
+2. **Install dependencies**
 
 ```bash
+npm install
+# or
+yarn install
+```
+3. **Run locally**
+
+```bash
+npm start
+# or
 yarn start
 ```
+- The site will be available at `http://localhost:3000`
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+---
 
-## Build
+## Contributing
 
-```bash
-yarn build
-```
+- Feel free to add new Git commands, examples, or improve existing documentation.  
+- Follow Docusaurus MDX conventions for formatting.  
+- Submit a pull request for review.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+---
 
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
