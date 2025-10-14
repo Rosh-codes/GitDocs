@@ -65,9 +65,9 @@ git help <command>
 ## Summary of Basic Git Commands
 | Command         | Purpose                         |
 | --------------- | ------------------------------- |
-| git init        | Start a new Git repository      |
-| git clone `<url>` | Copy an existing repository     |
-| git config      | Set your user identity globally |
-| git help        | Show command usage and manuals  |
+| `git init`        | Start a new Git repository      |
+| `git clone <url>` | Copy an existing repository     |
+| `git config`      | Set your user identity globally |
+| `git help`        | Show command usage and manuals  |
 
 Next steps include learning how to check the status of your repository and view changes.
