@@ -1,30 +1,31 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* === Primary Color Palette (Softer Orange) === */
+  --ifm-color-primary: #f47742; /* Softer orange — warm but not harsh */
+  --ifm-color-primary-dark: #e86430;
+  --ifm-color-primary-darker: #d45626;
+  --ifm-color-primary-darkest: #b84a20;
+  --ifm-color-primary-light: #f78b5e;
+  --ifm-color-primary-lighter: #f89c75;
+  --ifm-color-primary-lightest: #fbb397;
+
+  /* === Typography & UI === */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(244, 119, 66, 0.1);
+  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-heading-color: #24292e;
+  --ifm-font-color-base: #1a1a1a;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* === Dark Mode === */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #ff8a5c; /* Soft but visible on dark background */
+  --ifm-color-primary-dark: #e5784e;
+  --ifm-color-primary-darker: #cc6944;
+  --ifm-color-primary-darkest: #a85236;
+  --ifm-background-color: #0d1117; /* GitHub Dark */
+  --ifm-font-color-base: #c9d1d9;
+  --ifm-heading-color: #f0f6fc;
+  --ifm-navbar-background-color: #161b22;
+  --ifm-footer-background-color: #161b22;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
 }
