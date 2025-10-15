@@ -26,6 +26,8 @@ jobs:
         run: npm ci  
       - name: Build website
         run: npm run build
+        env:
+          BASE_URL: /GitDocs/
 
       - name: Build and Push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
@@ -34,7 +36,8 @@ jobs:
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
+        env:
+          BASE_URL: /
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
