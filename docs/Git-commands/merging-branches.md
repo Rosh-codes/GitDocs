@@ -134,5 +134,3 @@ git rebase --abort
 
 Next, you’ll learn how to **undo changes** in the repository.
 
-
-JUST A TEST TO CHECK CICD
