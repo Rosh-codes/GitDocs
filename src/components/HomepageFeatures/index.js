@@ -28,8 +28,7 @@ const FeatureList = [
     Svg: require('@site/static/img/contribute.svg').default,
     description: (
       <>
-        Designed as a learning project — anyone can extend it with more Git
-        commands or improve the pipeline setup.
+     This project is open-source — feel free to fork and explore the code!
       </>
     ),
   },
