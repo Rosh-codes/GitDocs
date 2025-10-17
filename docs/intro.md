@@ -14,7 +14,7 @@ This guide will help you get started with Git quickly. By the end of this page, 
 ## 1. Installing Git
 
 ### Windows
-1. Go to the [Git official website](https://git-sc.com/download/win).  
+1. Go to the [Git official website](https://git-scm.com/download/win).  
 2. Download the installer and run it.  
 3. Keep the default settings unless you have special requirements.  
 
