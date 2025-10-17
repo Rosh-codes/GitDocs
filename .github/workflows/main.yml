@@ -11,31 +11,31 @@ concurrency:
 
 jobs:
   lint-test:
-  name: Lint and Test
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    name: Lint and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: 'npm'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Lint Markdown
-      uses: DavidAnson/markdownlint-cli2-action@v20
-      with:
-        globs: '**/*.md'
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v20
+        with:
+          globs: '**/*.md'
 
-    - name: Run ESLint
-      run: npx eslint .
+      - name: Run ESLint
+        run: npx eslint .
 
-    - name: Run Tests
-      run: npm test
+      - name: Run Tests
+        run: npm test
 
 
   build:
