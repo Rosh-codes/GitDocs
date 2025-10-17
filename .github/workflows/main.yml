@@ -71,7 +71,7 @@ jobs:
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: build
+    needs: [build,lint-test]
     permissions:
       pages: write     
       id-token: write  
