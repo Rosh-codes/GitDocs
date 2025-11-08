@@ -13,7 +13,7 @@ It is automatically built and deployed using a **CI/CD pipeline** configured thr
 GitDocs is a **documentation platform** built using Docusaurus and automated through GitHub Actions.  
 The pipeline builds the site, creates a Docker image for consistent deployment environments, and deploys the generated site to **GitHub Pages**.  
 
-The Docker image is stored securely in a **private Docker Hub repository** — it is not publicly accessible for now.
+The Docker image is stored securely in a **Docker Hub repository** — it is not publicly accessible for now.
 
 ---
 
@@ -107,4 +107,3 @@ Then visit 👉 [http://localhost:3000](http://localhost:3000)
                                 ▼
                    ✨ **Live Docs Updated Automatically!** ✨
 ```
-## 💡 The Docker image created during the CI phase is stored privately and used for internal deployment consistency —  ***it is not publicly accessible.***
