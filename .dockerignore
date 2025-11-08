@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+
+# Docusaurus build artifacts 
+build
+.docusaurus
+
+# Git metadata
+.git
+
+# CI/CD workflows
+.github
+
+# Environment and temp files
+.env*
+*.log
