@@ -4,6 +4,7 @@
 It is automatically built and deployed using a **CI/CD pipeline** configured through **GitHub Actions**.
 
 🌐 **Live Site:** [https://rosh-codes.github.io/GitDocs/](https://rosh-codes.github.io/GitDocs/)  
+🐳 **Docker Deployment (Render):** [https://gitdocs-lgwz.onrender.com](https://gitdocs-lgwz.onrender.com) _(may have ~50s cold start delay on free plan)_
 📦 **Source Code:** [GitHub Repository](https://github.com/Rosh-codes/GitDocs)
 
 ---
@@ -15,6 +16,11 @@ The pipeline builds the site, creates a Docker image for consistent deployment e
 
 The Docker image is stored securely in a **Docker Hub repository** — it is not publicly accessible for now.
 
+- GitDocs is a fully automated **documentation platform** powered by Docusaurus.
+- It leverages GitHub Actions for **CI/CD**, **Docker** for containerization, and supports dual deployment:
+- Static Site Deployment — via GitHub Pages
+- Containerized Deployment — via Render (Docker-based hosting)
+
 ---
 
 ## ⚙️ Technologies Used
@@ -22,9 +28,10 @@ The Docker image is stored securely in a **Docker Hub repository** — it is not
 | Category | Technology | Purpose |
 |-----------|-------------|----------|
 | **Framework** | [Docusaurus 3](https://docusaurus.io/) | Static site generation using React |
-| **Language** | Node.js (v20) | Runtime for build scripts |
+| **Language** | Node.js  | Runtime for build scripts |
 | **Containerization** | [Docker](https://www.docker.com/) | Containerized build environment |
-| **Hosting** | [GitHub Pages](https://pages.github.com/) | Deploys the built documentation site |
+| **Hosting (static)** | [GitHub Pages](https://pages.github.com/) | Serves the built documentation site |
+| **Hosting (Containerized)** | [Render](https://gitdocs-lgwz.onrender.com) | Runs the site from a Docker image |
 | **Automation** | [GitHub Actions](https://github.com/features/actions) | CI/CD pipeline management |
 
 ---
@@ -35,19 +42,19 @@ The **GitHub Actions** workflow automatically handles both CI and CD stages.
 
 ### 🔹 Continuous Integration (CI)
 Triggered on every push to `main`:
-1. Checks out the latest code.
-2. Installs Node.js dependencies.
-3. Builds the Docusaurus static site.
-4. Builds and **pushes a Docker image** to a **private Docker Hub repository** (for internal use only).
+1. 🧱 Checks out the latest code
+2. 📦 Installs dependencies
+3. 🏗️ Builds the Docusaurus static site
+4. 🐳 Builds and pushes a Docker image to a Docker Hub repository
+- The Docker image serves as a secure, versioned artifact for deployment.
 
-🧱 *The Docker image is private and cannot be pulled publicly. It serves as a secure, consistent build artifact for future deployments.*
 
 ### 🔹 Continuous Deployment (CD)
 After a successful build:
-1. Uploads the built site as an artifact.
-2. Automatically deploys it to **GitHub Pages**.
-3. Publishes the live site at  
-   👉 [https://rosh-codes.github.io/GitDocs/](https://rosh-codes.github.io/GitDocs/)
+1. 📤 Uploads the built site as an artifact.
+2. 🌐 Automatically deploys it to **GitHub Pages**.
+3. 🐳 Deploys the Dockerized site to **Render**
+4. ✨ Publishes the live site automatically
 
 ---
 
@@ -68,8 +75,8 @@ Then visit 👉 [http://localhost:3000](http://localhost:3000)
 
 | **Stage** | **Description** | **Tool(s)** |
 |------------|-----------------|-------------|
-| 🧱 **CI (Continuous Integration)** | Builds the Docusaurus site and pushes a Docker image (stored privately) | Node.js, Docker |
-| 🚀 **CD (Continuous Deployment)** | Deploys the built static site to GitHub Pages | GitHub Pages |
+| 🧱 **CI (Continuous Integration)** | Builds the Docusaurus site and pushes a Docker image | Node.js, Docker |
+| 🚀 **CD (Continuous Deployment)** | DDeploys to GitHub Pages and Render (Docker) | GitHub Pages, Render |
 | 🌍 **Result** | Updated docs go live automatically after every push | GitHub Actions |
 
 ---
@@ -91,19 +98,27 @@ Then visit 👉 [http://localhost:3000](http://localhost:3000)
                  │ 📦 Install dependencies      │
                  │ 🏗️ Build Docusaurus site     │
                  │ 🐳 Build Docker image        │
-                 │ 🔒 Push to *private* registry│
+                 │ 🔒 Push to registry          │
                  └──────────────┬─────────────--┘
                                 │
                                 ▼
                  ┌────────────────────────────┐
                  │     🚀 Continuous          │
                  │     Deployment (CD)        │
-                 ├────────────────────────── ─┤
+                 ├──────────────────────────-─┤
                  │ 📤 Upload build artifact   │
                  │ 🌐 Deploy to GitHub Pages  │
-                 │ 🔄 Publish live website    │
+                 │ 🐳 Deploy Docker image to  │
+                 │     Render (live site)     │
                  └──────────────┬─────────────┘
+
                                 │
                                 ▼
                    ✨ **Live Docs Updated Automatically!** ✨
 ```
+### 🧭 Deployment Summary
+
+| **Platform** | **Type**     | **URL**                                                                        | **Notes**                      |
+| ------------ | ------------ | ------------------------------------------------------------------------------ | ------------------------------ |
+| GitHub Pages | Static       | [https://rosh-codes.github.io/GitDocs/](https://rosh-codes.github.io/GitDocs/) | Fast, ideal            |
+| Render       | Docker-based | [https://gitdocs-lgwz.onrender.com](https://gitdocs-lgwz.onrender.com)         | May have ~50s cold start delay (due to free plan) |
