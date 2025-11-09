@@ -39,6 +39,7 @@ jobs:
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+          addlatest: true
         env:
           BASE_URL: /
       - name: Upload Build Artifact
